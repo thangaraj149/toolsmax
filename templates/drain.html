@@ -22,7 +22,9 @@
     <!-- top navbar -->
     <div class="top-navbar">
         <div class="top-icons">
-            <img src="images/logo.png" width="100px" height="100px" >
+            <img src="images/logo.png"  >
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" width="100px" height="100px">
+
             <a href="https://www.instagram.com/?hl=en"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://twitter.com/?lang=en-in"><i class="fa-brands fa-twitter"></i></a>
@@ -33,7 +35,6 @@
 
             
            
-                <a  onclick="buynow()"><i class="fa fa-shopping-cart "></i><span class="badge" style="background-color: #000;border-radius: 100%;" id="cartincrement">0</span></a>
        
          
         </div>
@@ -83,6 +84,8 @@
           <div class="col-md-4 py-3 py-md-0">
               <div class="card">
                   <img src="rentimages/small-drain-cleaners-.webp" alt="">
+                  <img src="{{ url_for('static', filename='rentimages/small-drain-cleaners-.webp') }}" alt="">
+
                   <div class="card-body">
                     
                       <center>
@@ -99,6 +102,8 @@
           <div class="col-md-4 py-3 py-md-0">
               <div class="card">
                   <img src="rentimages/medium-drain-cleaners-.webp" alt="">
+                  <img src="{{ url_for('static', filename='rentimages/medium-drain-cleaners-.webp') }}" alt="">
+
                   <div class="card-body">
                    
                       <center>
@@ -115,6 +120,8 @@
         <div class="col-md-4 py-3 py-md-0">
             <div class="card">
                 <img src="rentimages/large-drain-cleaners-.avif" alt="">
+                <img src="{{ url_for('static', filename='rentimages/large-drain-cleaners-.avif') }}" alt="">
+
                 <div class="card-body">
                  
                     <center>
