@@ -27,6 +27,10 @@ def carpet():
 def compactors():
     return render_template("compactors.html")
 
+@app.route('/concrete')
+def concrete():
+    return render_template("concrete.html")
+
 
 @app.route('/contact')
 def contact():
