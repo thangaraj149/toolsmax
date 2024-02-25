@@ -3,11 +3,11 @@ import secrets
 app = Flask(__name__)
 
 # Route for the home  page
-@app.route('/home')
+@app.route('/')
 def home():
-    return render_template("intex.html")
+    return render_template("index.html")
 
-@app.route('/about')
+@app.route('/aabout')
 def about():
     return render_template("about.html")
 
@@ -27,9 +27,6 @@ def carpet():
 def compactors():
     return render_template("compactors.html")
 
-@app.route('/concrete')
-def concrete():
-    return render_template("concrete.html")
 
 @app.route('/contact')
 def contact():
@@ -102,6 +99,8 @@ def sales():
 @app.route('/signup')
 def signup():
     return render_template("signup.html")
+
+
      
 if __name__ == '__main__':
     app.run(debug=True)
