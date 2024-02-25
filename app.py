@@ -108,6 +108,9 @@ def sales():
 def signup():
     return render_template("signup.html")
 
+@app.route('/truck')
+def truck():
+    return render_template("truck.html")
 
      
 if __name__ == '__main__':

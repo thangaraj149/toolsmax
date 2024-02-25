@@ -22,7 +22,9 @@
     <!-- top navbar -->
     <div class="top-navbar">
         <div class="top-icons">
-            <img src="images/logo.png" width="100px" height="100px" >
+            <img src="images/logo.png" >
+            <img src="{{ url_for('static', filename='images/logo.png') }}" width="100px" height="100px"  alt="">
+
             <a href="https://www.instagram.com/?hl=en"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://twitter.com/?lang=en-in"><i class="fa-brands fa-twitter"></i></a>
@@ -33,7 +35,6 @@
 
             
            
-                <a  onclick="buynow()"><i class="fa fa-shopping-cart "></i><span class="badge" style="background-color: #000;border-radius: 100%;" id="cartincrement">0</span></a>
        
          
         </div>
@@ -66,10 +67,7 @@
                   </li>
                 </ul>
                
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
-                </form>
+              
               </div>
             </div>
           </nav>
@@ -88,6 +86,8 @@
            <div class="col-md-4 py-3 py-md-0">
                <div class="card">
                   <img src="rentimages/coating-removal-tool.webp" alt="">
+                  <img src="{{ url_for('static', filename='rentimages/coating-removal-tool.webp') }}" alt="">
+
                    <div class="card-body">
                      <center>
 
@@ -103,6 +103,8 @@
            <div class="col-md-4 py-3 py-md-0">
               <div class="card">
                   <img src="rentimages/floor-sanders-drum.webp" alt="">
+                  <img src="{{ url_for('static', filename='rentimages/floor-sanders-drum.webp') }}" alt="">
+
                   <div class="card-body">
                    
                       <center>
@@ -119,6 +121,8 @@
         <div class="col-md-4 py-3 py-md-0">
             <div class="card">
                 <img src="rentimages/floor-polisher.webp" alt="">
+                <img src="{{ url_for('static', filename='rentimages/floor-polisher.webp') }}" alt="">
+
                 <div class="card-body">
                  
                     <center>
@@ -139,6 +143,8 @@
         <div class="col-md-4 py-3 py-md-0">
             <div class="card">
                 <img src="rentimages/pro-floor-stripper-1.webp" alt="">
+                <img src="{{ url_for('static', filename='rentimages/pro-floor-stripper-1.webp') }}" alt="">
+
                 <div class="card-body">
                   
                     <center>
@@ -155,6 +161,8 @@
         <div class="col-md-4 py-3 py-md-0">
             <div class="card">
                 <img src="rentimages/floor-installation.webp" alt="">
+                <img src="{{ url_for('static', filename='rentimages/floor-installation.webp') }}" alt="">
+
                 <div class="card-body">
                  
                     <center>
@@ -171,6 +179,8 @@
       <div class="col-md-4 py-3 py-md-0">
           <div class="card">
               <img src="rentimages/vacuum-dust-control.webp" alt="">
+              <img src="{{ url_for('static', filename='rentimages/vacuum-dust-control.webp') }}" alt="">
+
               <div class="card-body">
                
                   <center>
