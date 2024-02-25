@@ -16,27 +16,129 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <!-- fonts links -->
+    <style>
+      .container1{
+  width: 400px;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid#1c1c50(255, 255, 255, 0.5);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color:#1c1c50;
+}
+
+.input-field {
+  position: relative;
+  border-bottom: 2px solid#1c1c50;
+  margin: 15px 0;
+}
+
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color:#1c1c50;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+.input-field input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color:#1c1c50;
+}
+
+.input-field input:focus~label,
+.input-field input:valid~label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+.forget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 0 35px 0;
+  color:#1c1c50;
+}
+
+#Save-login {
+  accent-color: #fff;
+}
+
+.forget label {
+  display: flex;
+  align-items: center;
+}
+
+.forget label p {
+  margin-left: 8px;
+}
+
+.container a {
+  color:#1c1c50;
+  text-decoration: none;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background:#1c1c50;
+  color:white;
+  font-weight: 600;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  color:#1c1c50;
+  border-color:#1c1c50;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.Create-account {
+  text-align: center;
+  margin-top: 30px;
+  color:#1c1c50;
+}
+    </style>
 </head>
 <body>
 
     <!-- top navbar -->
     <div class="top-navbar">
         <div class="top-icons">
-            <img src="images/logo.png" width="100px" height="100px" >
+            
             <a href="https://www.instagram.com/?hl=en"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://twitter.com/?lang=en-in"><i class="fa-brands fa-twitter"></i></a>
         </div>
-        <div class="other-links">
-            <button id="btn-login"><a href="login.html">Login</a></button>
-            <button id="btn-signup"><a href="signup.html">Sign up</a></button>
-
-            
-           
-                <a  onclick="buynow()"><i class="fa fa-shopping-cart "></i><span class="badge" style="background-color: #000;border-radius: 100%;" id="cartincrement">0</span></a>
-       
-         
-        </div>
+        <img src="images/logo.png" width="100px" height="100px" >
     </div>
     <div class="home-section">
         <!-- navbar -->
@@ -66,43 +168,44 @@
                   </li>
                 </ul>
                
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
-                </form>
+              
               </div>
             </div>
           </nav>
         <!-- navbar -->
 
-
-        <!-- login -->
-        <div class="container login">
-            <div class="row">
-                <div class="col-md-4" id="side1">
-                    <h3>Welcome Back!!</h3>
-                    <p></p>
-                    <div id="btn"><a href="login.html">Login</a></div>
-                </div>
-                <div class="col-md-8" id="side2">
-                    <h3>Create Account</h3>
-                    <div class="inp">
-                        <input type="text" placeholder="Name" required>
-                        <input type="email" placeholder="Email" required>
-                        <input type="text" placeholder="Password" required>
-                    </div>
-                    <p></p>
-                    <div class="icons">
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                    <div id="login"><button>SIGN UP</button></div>
-                </div>
-            </div>
-        </div>
-        <!-- login -->
-
+<center>
+        <div class="container1">
+          <form action="/register" method="POST,GET">
+              <h2>Register</h2>
+              <div class="input-field">
+                <label>Enter Username</label>
+                  <input type="text" name="username" required>
+              </div>
+              <br>
+              <div class="input-field">
+                <label>Enter email</label>
+                  <input type="email" name="email" required>
+              </div>
+              <br>
+              <div class="input-field">
+                <label>Enter password</label>
+                  <input type="password" name="password" required />
+              </div>
+              <br>
+              <div class="remember-forgot">
+                  <label>
+                      <input type="checkbox" id="Save-login" /> Remember
+                      
+                  </label>
+              </div>
+              <button type="submit">Register</button>
+              <div class="register-link">
+                  <p>Click to Login <a href="login">Login</a></p>
+              </div>
+          </form>
+      </div>
+    </center>
 
 
 
