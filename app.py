@@ -44,7 +44,7 @@ def coredrill():
 def dc():
     return render_template("dc.html")
 
-@app.route('/demolition')
+@app.route('/demolitions')
 def demolition():
     return render_template("demolition.html")
 
