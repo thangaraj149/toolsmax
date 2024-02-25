@@ -3,104 +3,104 @@ import secrets
 app = Flask(__name__)
 
 # Route for the home  page
-@app.route('/')
+@app.route('/home')
 def home():
     return render_template("intex.html")
 
-@app.route('/')
-def home():
+@app.route('/about')
+def about():
     return render_template("about.html")
 
-@app.route('/')
-def home():
+@app.route('/aerators')
+def aerators():
     return render_template("aerators.html")
     
-@app.route('/')
-def home():
+@app.route('/blowers')
+def blowers():
     return render_template("blowers.html")
 
-@app.route('/')
-def home():
+@app.route('/carpet')
+def carpet():
     return render_template("carpet.html")
 
-@app.route('/')
-def home():
+@app.route('/compactors')
+def compactors():
     return render_template("compactors.html")
 
-@app.route('/')
-def home():
+@app.route('/concrete')
+def concrete():
     return render_template("concrete.html")
 
-@app.route('/')
-def home():
+@app.route('/contact')
+def contact():
     return render_template("contact.html")
 
-@app.route('/')
-def home():
+@app.route('/coredrill')
+def coredrill():
     return render_template("coredrill.html")
 
-@app.route('/')
-def home():
+@app.route('/dc')
+def dc():
     return render_template("dc.html")
 
-@app.route('/')
-def home():
+@app.route('/demolition')
+def demolition():
     return render_template("demolition.html")
 
-@app.route('/')
-def home():
+@app.route('/drain')
+def drain():
     return render_template("drain.html")
 
-@app.route('/')
-def home():
+@app.route('/drainclean')
+def drainclean():
     return render_template("drainclean.html")
 
-@app.route('/')
-def home():
+@app.route('/floor')
+def floor():
     return render_template("floor.html")
 
-@app.route('/')
-def home():
+@app.route('/flr')
+def flr():
     return render_template("flr.html")
 
-@app.route('/')
-def home():
+@app.route('/grinder')
+def grinder():
     return render_template("grinder.html")
 
-@app.route('/')
-def home():
+@app.route('/largerent')
+def largerent():
     return render_template("largerent.html")
 
-@app.route('/')
-def home():
+@app.route('/login')
+def login():
     return render_template("login.html")
 
-@app.route('/')
-def home():
+@app.route('/paint')
+def paint():
     return render_template("paint.html")
 
-@app.route('/')
-def home():
+@app.route('/paints')
+def paints():
     return render_template("paints.html")
 
-@app.route('/')
-def home():
+@app.route('/pressure')
+def pressure():
     return render_template("pressure.html")
 
-@app.route('/')
-def home():
+@app.route('/rent')
+def rent():
     return render_template("rent.html")
 
-@app.route('/')
-def home():
+@app.route('/rentform')
+def rentform():
     return render_template("rentform.html")
 
-@app.route('/')
-def home():
+@app.route('/sales')
+def sales():
     return render_template("sales.html")
 
-@app.route('/')
-def home():
+@app.route('/signup')
+def signup():
     return render_template("signup.html")
      
 if __name__ == '__main__':
