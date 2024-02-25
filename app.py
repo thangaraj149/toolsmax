@@ -96,6 +96,10 @@ def rent():
 def rentform():
     return render_template("rentform.html")
 
+@app.route('/rentacc')
+def rentacc():
+    return render_template("rentacc.html")
+
 @app.route('/sales')
 def sales():
     return render_template("sales.html")
