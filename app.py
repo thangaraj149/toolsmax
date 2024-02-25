@@ -27,6 +27,10 @@ def carpet():
 def compactors():
     return render_template("compactors.html")
 
+@app.route('/concrete')
+def concrete():
+    return render_template("concrete.html")
+
 
 @app.route('/contact')
 def contact():
@@ -40,7 +44,7 @@ def coredrill():
 def dc():
     return render_template("dc.html")
 
-@app.route('/demolition')
+@app.route('/demolitions')
 def demolition():
     return render_template("demolition.html")
 
@@ -91,6 +95,10 @@ def rent():
 @app.route('/rentform')
 def rentform():
     return render_template("rentform.html")
+
+@app.route('/rentacc')
+def rentacc():
+    return render_template("rentacc.html")
 
 @app.route('/sales')
 def sales():

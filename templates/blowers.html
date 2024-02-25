@@ -22,7 +22,7 @@
     <!-- top navbar -->
     <div class="top-navbar">
         <div class="top-icons">
-            <img src="images/logo.png" width="100px" height="100px" >
+            <img src="{{ url_for('static', filename='images/logo.png') }}" width="100px" height="100px" >
             <a href="https://www.instagram.com/?hl=en"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://twitter.com/?lang=en-in"><i class="fa-brands fa-twitter"></i></a>
@@ -76,7 +76,7 @@
       <div class="row" style="margin-top: 30px;">
           <div class="col-md-3 py-3 py-md-0">
               <div class="card">
-                  <img src="salesimages/36V-blower-1.webp" alt="">
+                  <img src="{{ url_for('static', filename='salesimages/36V-blower-1.webp') }}" alt="">
                   <div class="card-body">
                     
                       <center>
@@ -91,7 +91,7 @@
           </div>
           <div class="col-md-3 py-3 py-md-0">
               <div class="card">
-                  <img src="salesimages/handheld-blower.webp" alt="">
+                  <img src="{{ url_for('static', filename='salesimages/handheld-blower.webp') }}" alt="">
                   <div class="card-body">
                    
                       <center>
@@ -108,7 +108,7 @@
           </div>
           <div class="col-md-3 py-3 py-md-0">
               <div class="card">
-                  <img src="salesimages/blowers-backup.webp" alt="">
+                  <img src="{{ url_for('static', filename='salesimages/blowers-backup.webp') }}" alt="">
                   <div class="card-body">
                       <center><h3>backup-blower</h3>
                         <h2>MRP-<strike> Rs:4500 </strike>Rs:3999</h2>
@@ -120,7 +120,7 @@
           </div>
           <div class="col-md-3 py-3 py-md-0">
               <div class="card">
-                  <img src="walk-behind.webp" alt="">
+                  <img src="{{ url_for('static', filename='salesimages/walk-behind.webp') }}" alt="">
                   <div class="card-body">
                       <center>
                       <h3>walk-behind blower</h3>
