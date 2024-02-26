@@ -1,6 +1,12 @@
 from flask import Flask, render_template, request, redirect, session
 import secrets
+import sqlite3
 app = Flask(__name__)
+app.secret_key="123"
+
+sqlconnection =sqlite3.connect("admin.db")
+sqlconnection.execute("create table if not exists users(username text,password text, email text)")
+sqlconnection.close()
 
 # Route for the home  page
 @app.route('/')
@@ -72,9 +78,50 @@ def grinder():
 def largerent():
     return render_template("largerent.html")
 
-@app.route('/login')
-def login():
-    return render_template("login.html")
+@app.route('/login', methods=["GET", "POST"])
+def log():
+    if request.method == "POST":
+        username = request.form['username']
+        password = request.form['password']
+        sqlconnection = sqlite3.connect('admin.db')
+        sqlconnection.row_factory = sqlite3.Row
+        cur = sqlconnection.cursor()
+
+        cur.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
+        data = cur.fetchone()
+        if data:
+            session['username'] = data["username"]
+            session['password'] = data["password"]
+            flash("Welcome to HVK", "logged")
+            return redirect("/")
+        else:
+            flash("Invalid Username and Password", "danger")
+            return redirect('/login')
+    return redirect('/')
+
+
+@app.route('/signup', methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        try:
+            username = request.form['username']
+            email = request.form['email']
+            password = request.form['password']
+            
+            sqlconnection = sqlite3.connect('admin.db')
+            cur = sqlconnection.cursor()
+            cur.execute("INSERT INTO users(username, email, password) VALUES (?, ?, ?)", (username, email, password))
+            
+            sqlconnection.commit()
+            flash("Record added Successfully", "success")
+        except:
+            flash("Error in Insert Operation", "danger")
+        finally:
+            sqlconnection.close()
+            return redirect('/login')
+
+    return render_template("signup.html")
+
 
 @app.route('/paint')
 def paint():
