@@ -1,7 +1,6 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session,flash
 import secrets
 import sqlite3
-import db
 app = Flask(__name__)
 app.secret_key="123"
 
@@ -84,7 +83,7 @@ def log():
     if request.method == "POST":
         username = request.form['username']
         password = request.form['password']
-        sqlconnection = sqlite3.connect('user.db')
+        sqlconnection = sqlite3.connect('admin.db')
         sqlconnection.row_factory = sqlite3.Row
         cur = sqlconnection.cursor()
 
@@ -93,12 +92,11 @@ def log():
         if( data):
             session['username'] = data["username"]
             session['password'] = data["password"]
-            flash("Welcome to HVK", "logged")
             return redirect("/")
         else:
             flash("Invalid Username and Password", "danger")
             return redirect('/login')
-    return redirect('/')
+    return render_template('login.html')
 
 
 @app.route('/signup', methods=["GET", "POST"])
@@ -109,12 +107,13 @@ def signin():
             email = request.form['email']
             password = request.form['password']
             
-            sqlconnection = sqlite3.connect('user.db')
+            sqlconnection = sqlite3.connect('admin.db')
+
             cur = sqlconnection.cursor()
             cur.execute("INSERT INTO users(username, email, password) VALUES (?, ?, ?)", (username, email, password))
             
             sqlconnection.commit()
-            flash("Record added Successfully", "success")
+           
         except:
             flash("Error in Insert Operation", "danger")
         finally:
