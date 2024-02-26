@@ -24,8 +24,8 @@
     <!-- top navbar -->
     <div class="top-navbar">
         <div class="top-icons">
-            <img src="images/logo.png" width="100px" height="100px" >
-            <a href="https://www.instagram.com/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+          <img src="{{ url_for('static', filename='images/logo.png' ) }}" width="100px" height="100px">
+          <a href="https://www.instagram.com/?hl=en"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://twitter.com/?lang=en-in"><i class="fa-brands fa-twitter"></i></a>
         </div>
@@ -67,10 +67,7 @@
                   </li>
                 </ul>
                
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
-                </form>
+               
               </div>
             </div>
           </nav>
