@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToolsMax</title>
     <link rel="shortcut icon" type="image" href="./image/logo2.png">
+    <link rel="shortcut icon" type="image" href="{{ url_for('static', filename='images/logo.png') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <!-- bootstrap links -->
@@ -22,8 +24,8 @@
     <!-- top navbar -->
     <div class="top-navbar">
         <div class="top-icons">
-            <img src="images/logo.png" width="100px" height="100px" >
-            <a href="https://www.instagram.com/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+          <img src="{{ url_for('static', filename='images/logo.png' ) }}" width="100px" height="100px">
+          <a href="https://www.instagram.com/?hl=en"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://twitter.com/?lang=en-in"><i class="fa-brands fa-twitter"></i></a>
         </div>
@@ -33,7 +35,6 @@
 
             
            
-                <a  onclick="buynow()"><i class="fa fa-shopping-cart "></i><span class="badge" style="background-color: #000;border-radius: 100%;" id="cartincrement">0</span></a>
        
          
         </div>
@@ -66,10 +67,7 @@
                   </li>
                 </ul>
                
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
-                </form>
+               
               </div>
             </div>
           </nav>

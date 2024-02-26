@@ -163,7 +163,9 @@ def truck():
 def cartform():
     return render_template("cartform.html")
 
-     
+@app.route('/salesacc')
+def salesacc():
+    return render_template("salesacc.html")  
 if __name__ == '__main__':
     app.run(debug=True)
 
