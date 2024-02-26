@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request, redirect, session
 import secrets
 import sqlite3
+import db
 app = Flask(__name__)
 app.secret_key="123"
 
 sqlconnection =sqlite3.connect("admin.db")
-sqlconnection.execute("create table if not exists users(username text,password text, email text)")
+sqlconnection.execute("create table if not exists users(username text,password integer, email text)")
 sqlconnection.close()
 
 # Route for the home  page
@@ -83,13 +84,13 @@ def log():
     if request.method == "POST":
         username = request.form['username']
         password = request.form['password']
-        sqlconnection = sqlite3.connect('admin.db')
+        sqlconnection = sqlite3.connect('user.db')
         sqlconnection.row_factory = sqlite3.Row
         cur = sqlconnection.cursor()
 
         cur.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
         data = cur.fetchone()
-        if data:
+        if( data):
             session['username'] = data["username"]
             session['password'] = data["password"]
             flash("Welcome to HVK", "logged")
@@ -101,14 +102,14 @@ def log():
 
 
 @app.route('/signup', methods=["GET", "POST"])
-def register():
+def signin():
     if request.method == "POST":
         try:
             username = request.form['username']
             email = request.form['email']
             password = request.form['password']
             
-            sqlconnection = sqlite3.connect('admin.db')
+            sqlconnection = sqlite3.connect('user.db')
             cur = sqlconnection.cursor()
             cur.execute("INSERT INTO users(username, email, password) VALUES (?, ?, ?)", (username, email, password))
             
@@ -121,6 +122,7 @@ def register():
             return redirect('/login')
 
     return render_template("signup.html")
+
 
 
 @app.route('/paint')
