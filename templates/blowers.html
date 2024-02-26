@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToolsMax</title>
     <link rel="shortcut icon" type="image" href="./image/logo2.png">
+    <link rel="shortcut icon" type="image" href="{{ url_for('static', filename='images/logo.png') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <!-- bootstrap links -->
@@ -200,8 +202,7 @@
     </footer>
     <!-- footer -->
 
-<a href="#" class="arrow"><i><img src="./image/up-arrow.png" alt="" width="50px"></i></a>
-<script src="main.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script><script src="main.js"></script>
     
 </body>
 
