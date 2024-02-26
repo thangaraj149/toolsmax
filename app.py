@@ -112,6 +112,10 @@ def signup():
 def truck():
     return render_template("truck.html")
 
+@app.route('/cartform')
+def cartform():
+    return render_template("cartform.html")
+
      
 if __name__ == '__main__':
     app.run(debug=True)
